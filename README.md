@@ -1,3 +1,3 @@
 # caluclator
 
-Based on the iPhone caluclator.
+Based on the iPhone caluclator. Made with vanilla JS and CSS.
