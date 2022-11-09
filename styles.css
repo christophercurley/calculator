@@ -10,10 +10,6 @@ p {
   pointer-events: none;
 }
 
-/* * {
-  border: 1px solid red;
-} */
-
 .screen {
   height: 200px;
   width: 360px;
@@ -23,7 +19,6 @@ p {
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
-  /* border: solid 1px gray; */
 }
 
 .screen p {
