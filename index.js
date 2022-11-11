@@ -191,7 +191,6 @@ function addFunctionListerns() {
 function addScreenListener() {
   const acButton = document.getElementById("acp");
 
-  console.log(acButton.firstChild);
   screen.addEventListener("DOMSubtreeModified", () => {
     if (screenValue !== "0" || previousValue) {
       acButton.innerText = "C";
@@ -215,8 +214,14 @@ function evalutate() {
     result = operate(previousValue, operator, currentValue);
   }
 
-  screen.innerText = format(result.toString());
-  screenValue = format(result.toString());
+  if (result.toString().length > 9) {
+    console.log(">9");
+    screen.innerText = result.toExponential(2).toString();
+    screenValue = result.toExponential(2).toString();
+  } else {
+    screen.innerText = format(result.toString());
+    screenValue = format(result.toString());
+  }
 
   if (equalsPressed && !lockedValue) {
     lockedValue = currentValue;
