@@ -189,11 +189,18 @@ function addFunctionListerns() {
 }
 
 function addScreenListener() {
-  const acButton = document.getElementById("ac");
+  const acButton = document.getElementById("acp");
 
-  screen.addEventListener("DOMSubtreeModified", (e) => {
-    if (screenValue !== "0" || previousValue) acButton.innerText = "C";
-    if (screenValue === "0") acButton.innerText = "AC";
+  console.log(acButton.firstChild);
+  screen.addEventListener("DOMSubtreeModified", () => {
+    if (screenValue !== "0" || previousValue) {
+      acButton.innerText = "C";
+      acButton.style.pointerEvents = "none";
+    }
+    if (screenValue === "0") {
+      acButton.innerText = "AC";
+      acButton.style.pointerEvents = "none";
+    }
   });
 }
 
