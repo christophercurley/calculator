@@ -27,7 +27,7 @@ function addNumListeners() {
       }
 
       if (screenValue !== "0") {
-        if (screenValue.replace(/,./g, "").length < 9) screenValue += num;
+        if (screenValue.replace(/[\.,]/g, "").length < 9) screenValue += num;
         if (screenValue.length > 3) screenValue = format(screenValue);
       } else {
         screenValue = num;
